@@ -25,9 +25,9 @@ int main() {
 		cout << "Sort ascending / descending(1 / 0) :" << endl;
 		cin >> order;
 
-		swap_sort(p1, p2, p3, order);
+		swap_sort(&a, &b, &c, order);
 
-		cout << "Result : " << *p1 << " " << *p2 << " " << *p3 << endl;
+		cout << "Result : " << a << " " << b << " " << c << endl;
 	}
 
 	return 0;
@@ -36,40 +36,39 @@ int main() {
 void swap_sort(int *a, int *b, int *c, bool order) {
 
 	if (order) {
-		int *k;
+		int k;
 		if (*a > *b) {
-			k = b;
-			b = a;
-			a = k;
+			k = *b;
+			*b = *a;
+			*a = k;
 		}
 		if (*b > *c) {
-			k = c;
-			c = b;
-			b = k;
+			k = *c;
+			*c = *b;
+			*b = k;
 		}
 		if (*a > *b) {
-			k = b;
-			b = a;
-			a = k;
+			k = *b;
+			*b = *a;
+			*a = k;
 		}
 	}
 	else {
-		int *k;
+		int k;
 		if (*a < *b) {
-			k = b;
-			b = a;
-			a = k;
+			k = *b;
+			*b = *a;
+			*a = k;
 		}
 		if (*b < *c) {
-			k = c;
-			c = b;
-			b = k;
+			k = *c;
+			*c = *b;
+			*b = k;
 		}
 		if (*a < *b) {
-			k = b;
-			b = a;
-			a = k;
+			k = *b;
+			*b = *a;
+			*a = k;
 		}
 	}
-
 }
