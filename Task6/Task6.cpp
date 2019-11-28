@@ -90,10 +90,19 @@ bool load(vector<string> *database) {
 		if (initi_data(database)) {
 			ifstream infile;
 			infile.open(temp);
+			string empty = "";
 			string data;
-			getline(infile, data);	// read full line
-			infile.close();
-			cout << data << endl;
+			for (int i = 0;; i++) {
+				getline(infile, data); 
+				if (data == empty) {
+					infile.close();
+					return true;
+				}
+				database->push_back(data);
+			}
+		}
+		else {
+			return false;
 		}
 	}
 	else {
@@ -145,7 +154,9 @@ void main() {
 			}
 		}
 		if (userinput == 7) {
-			print(database);
+			if (load(database)) {
+				cout << "Database loaded" << endl;
+			}
 		}
 		if (userinput == 8) {
 			return;

@@ -1,0 +1,9 @@
+1. I learned a lot about pointers as well as file IO.
+
+2. In task 3 it was difficult to understand what should go where. I thought I was supposed to put pointers as arguments and not just the memory address of
+a, b and c. So I called the function with (p1, p2, p3, bool) instead of (&a, &b, &c, bool) at first. I overcame it by asking in the class Discord, they gave
+me other perspectives which made me see the error of my ways.
+
+3. Dunno. It was a pretty good lab I'd say.
+
+Estimated time: ~10 hours
